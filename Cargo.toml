@@ -1,7 +1,10 @@
 [package]
-name = "kubos-telemetry-db"
+name = "cubeos-telemetry-db"
 version = "0.1.0"
-authors = ["Marshall Culpepper <marshall@kubos.com>"]
+authors = [
+    "Marshall Culpepper <marshall@kubos.com>",
+    "Patrick Oppel <patrick.oppel94@gmail.com>"
+]
 edition = "2018"
 
 [dependencies]
