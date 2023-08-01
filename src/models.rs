@@ -25,3 +25,80 @@ pub struct Entry {
     pub parameter: String,
     pub value: Vec<u8>,
 }
+
+
+#[derive(Debug, Serialize, Deserialize)]
+///Result returned from get_telemetry
+pub struct GetTelemetryStruct {
+    ///
+    pub timestamp_ge: Option<f64>,
+    ///
+    pub timestamp_le: Option<f64>,
+    ///
+    pub subsystem: Option<String>,
+    ///
+    pub parameters: Option<Vec<String>>,
+    ///
+    pub limit: Option<i32>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+///
+pub struct RoutedTelemetryStruct {
+    ///
+    pub timestamp_ge: Option<f64>,
+    ///
+    pub timestamp_le: Option<f64>,
+    ///
+    pub subsystem: Option<String>,
+    ///
+    pub parameters: Option<Vec<String>>,
+    ///
+    pub limit: Option<i32>,
+    ///
+    pub output: String,
+    ///
+    pub compress: bool,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+///
+pub struct DataPoint {
+    ///
+    pub timestamp: Option<f64>,
+    ///
+    pub subsystem: String,
+    ///
+    pub parameter: String,
+    ///
+    pub value: Vec<u8>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+///
+pub struct InsertBulkStruct {
+    ///
+    pub timestamp: Option<f64>,
+    ///
+    pub entries: Vec<DataPoint>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+///
+pub struct DeleteStruct {
+    ///
+    pub timestamp_ge: Option<f64>,
+    ///
+    pub timestamp_le: Option<f64>,
+    ///
+    pub subsystem: Option<String>,
+    ///
+    pub parameter: Option<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+///
+pub struct GetTelemetryResult {
+    ///
+    pub result: Vec<Entry>,
+}
