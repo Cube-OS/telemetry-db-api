@@ -17,7 +17,7 @@
 use super::telemetry;
 use serde_derive::{Deserialize, Serialize};
 
-#[derive(Clone, Debug, Queryable, Serialize, Deserialize, Insertable)]
+#[derive(Default, Clone, Debug, Queryable, Serialize, Deserialize, Insertable)]
 #[table_name = "telemetry"]
 pub struct Entry {
     pub timestamp: f64,
@@ -42,7 +42,7 @@ pub struct GetTelemetryStruct {
     pub limit: Option<i32>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 ///
 pub struct RoutedTelemetryStruct {
     ///
@@ -61,7 +61,7 @@ pub struct RoutedTelemetryStruct {
     pub compress: bool,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 ///
 pub struct DataPoint {
     ///
@@ -74,7 +74,7 @@ pub struct DataPoint {
     pub value: Vec<u8>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 ///
 pub struct InsertBulkStruct {
     ///
@@ -83,7 +83,7 @@ pub struct InsertBulkStruct {
     pub entries: Vec<DataPoint>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 ///
 pub struct DeleteStruct {
     ///
@@ -96,7 +96,7 @@ pub struct DeleteStruct {
     pub parameter: Option<String>,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
 ///
 pub struct GetTelemetryResult {
     ///
