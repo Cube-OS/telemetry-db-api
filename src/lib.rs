@@ -123,8 +123,8 @@ impl Database {
         parameter: &'a str,
         value: Vec<u8>,
     ) -> QueryResult<usize> {
-        let time = time::now_utc().to_timespec();
-        let timestamp = time.sec as f64 + (f64::from(time.nsec) / 1_000_000_000.0);
+        let time = time::OffsetDateTime::now_utc();
+        let timestamp = time.unix_timestamp() as f64 + (f64::from(time.nanosecond()) / 1_000_000_000.0);
         self.insert(timestamp, subsystem, parameter, value)
     }
 
