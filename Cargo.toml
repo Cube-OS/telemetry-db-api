@@ -1,6 +1,5 @@
 [package]
 repository = "https://github.com/Cube-OS/telemetry-db-api"
-repository = "https://github.com/Cube-OS/telemetry-db-api"
 name = "cubeos-telemetry-db"
 version = "0.1.0"
 authors = [
