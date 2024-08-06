@@ -1,5 +1,4 @@
 [package]
-repository = "https://github.com/Cube-OS/telemetry-db-api"
 name = "cubeos-telemetry-db"
 version = "0.1.0"
 authors = [
@@ -7,6 +6,7 @@ authors = [
     "Patrick Oppel <patrick.oppel94@gmail.com>"
 ]
 edition = "2018"
+repository = "https://github.com/Cube-OS/telemetry-db-api"
 
 [dependencies]
 diesel = { version = "1.0.0", features = ["sqlite"] }
